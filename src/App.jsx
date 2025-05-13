@@ -5,30 +5,10 @@ function App() {
   const [url, setUrl] = useState(null);
   const [summary, setSummary] = useState(null);
   const [loading, setLoading] = useState(false);
-
-  // const handleSubmit = async () => {
-  //   if (!url) return;
-  //   setLoading(true);
-  //   try {
-  //     const res = await fetch('/api/extract', {
-  //       method: 'POST',
-  //       headers: { 'Content-Type': 'application/json' },
-  //       body: JSON.stringify({ url })
-  //     });
-  //     const data = await res.json();
-  //     setResults([...results, data]);
-  //   } catch (error) {
-  //     console.error(error);
-  //     alert('Error extracting content.');
-  //   } finally {
-  //     setLoading(false);
-  //     setUrl('');
-  //   }
-  // };
 const handleExtract = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://synergy-cf-api.axodesk.com:3000/api/extract', {
+      const response = await fetch('http://localhost:5000/api/extract', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
