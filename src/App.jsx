@@ -28,7 +28,7 @@ function App() {
 const handleExtract = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://localhost:5000/api/extract', {
+      const response = await fetch('https://synergy-cf-api.axodesk.com:3000/api/extract', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url }),
